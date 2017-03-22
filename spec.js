@@ -40,4 +40,34 @@ describe(__filename, function(){
     });
     done();
   })
+
+
+  it("output error", function (done) {
+    clog.error('TEST JSON', {
+      some: 'THING',
+      complex: {
+        name: 'COMPLEX',
+        data: [
+          {
+            id: 1,
+            text: "TEXT DATA"
+          }
+        ]
+      }
+    });
+
+    clog.error('TEST JSON', {
+      some: 'THING 2',
+      complex: {
+        name: 'COMPLEX',
+        data: [
+          {
+            id: 1,
+            text: "TEXT DATA"
+          }
+        ]
+      }
+    });
+    done();
+  })
 });
