@@ -3,16 +3,16 @@ const clog = require('./index');
 
 describe(__filename, function(){
 	it("output null", function(done){
-		// fbkt().clog("NULL", null);
+		clog("NULL", null);
 		done();
 	});
 	
 	it("output undefined", function(done){
-		// fbkt().clog("UNDEFINED", undefined);
+		clog("UNDEFINED", undefined);
 		done();
 	});
 
-	it.only("output json", function(done){
+	it("output json", function(done){
 	  clog('TEST JSON', {
 	    some: 'THING',
       complex: {
@@ -25,6 +25,19 @@ describe(__filename, function(){
         ]
       }
     });
-	  done();
+
+    clog('TEST JSON', {
+      some: 'THING 2',
+      complex: {
+        name: 'COMPLEX',
+        data: [
+          {
+            id: 1,
+            text: "TEXT DATA"
+          }
+        ]
+      }
+    });
+    done();
   })
 });
